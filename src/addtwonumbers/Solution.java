@@ -21,7 +21,7 @@ class Solution {
     	x = ((l1==null?0:l1.val) + (l2==null?0:l2.val) + y);//计算节点之和
     	ListNode head = new ListNode(x%10);//将各位置入新的数组
     	y = x/10;//取进位
-    	head.next= addTwoNumbers(l1.next, l2.next);
+    	head.next= addTwoNumbers((l1==null?null:l1.next),(l2==null?null:l2.next));
     	return head;
 
     }
