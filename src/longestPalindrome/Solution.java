@@ -24,7 +24,6 @@ class Solution {
     	    // 最长回文子串的中心位置索引
     	    int index = 0;
     	    for (int j=1; j<n-1; j++) {
-    	        // 参看前文第五部分
     	        p[j] = mx > j ? Math.min(p[2*id-j], mx-j) : 1;
     	        // 向左右两边延伸，扩展右边界
     	        while (t.charAt(j+p[j]) == t.charAt(j-p[j])) {
@@ -37,7 +36,6 @@ class Solution {
     	        }
     	        // 如果回文子串的长度大于maxLength，则更新maxLength和index的值
     	        if (maxLength < p[j] - 1) {
-    	            // 参看前文第三部分
     	            maxLength = p[j] - 1;
     	            index = j;
     	        }
