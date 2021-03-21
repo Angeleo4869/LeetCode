@@ -55,15 +55,17 @@
 class Solution {
     public boolean validMountainArray(int[] A) {
         if(A.length < 3) return false;
-        int x, y;
-        for(x = 0;x < A.length -1 ;x++){
+        int x;
+        for(x = 0;x < A.length -2 ;x++){
             if(A[x] >= A[x+1]) break;
         }
-        for(y = A.length-1 ; y > 1;y--){
-            if(A[y] >= A[y-1]) break;
+        if (x < 1) return false;
+        for( ; x < A.length - 1; x++){
+            if(A[x] <= A[x + 1]) break;
         }
-        if((x > 0 && y < A.length-1) && x == y)  return true;
-        return false;
+        if(x < A.length-1)
+            return false;
+        return true;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
